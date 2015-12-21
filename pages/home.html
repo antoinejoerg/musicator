@@ -1,0 +1,15 @@
+<div class="container" ng-controller="homeController" >
+	<div class="row">
+		<div ng-repeat="f in files" class="col-md-3" >
+			
+			{{player$index.paused}}
+			<button class="control btn btn-lg btn-block" ng-class="class$index"
+			ng-click="play($index, this);" >
+			{{f.substr(0, f.lastIndexOf('.'));}}
+			</button>
+			<audio id="player{{$index}}">
+			  	<source src="{{getUrl(f)}}" type="audio/mp3">
+			</audio>
+		</div>
+	</div>
+</div>
